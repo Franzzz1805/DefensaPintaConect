@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Listado de Productos</title>
+  <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./styleAPIConsumo.css">
+</head>
+<body>
+
+  <div class="title-container">
+    <h2>Listado de Productos</h2>
+    <button id="addProductoBtn" class="btn-add">Agregar Producto</button>
+  </div>
+
+  <table id="loadProductoList" class="table-client">
+    <thead class="table-client__head">
+      <tr>
+        <th class="table-client__header">ID</th>
+        <th class="table-client__header">Código</th>
+        <th class="table-client__header">Color</th>
+        <th class="table-client__header">Nombre</th>
+        <th class="table-client__header">Precio</th>
+        <th class="table-client__header">Stock</th>
+        <th class="table-client__header">Marca</th>
+        <th class="table-client__header">Almacén</th>
+        <th class="table-client__header">Tipo</th>
+        <th class="table-client__header">Editar</th>
+        <th class="table-client__header">Eliminar</th>
+      </tr>
+    </thead>
+    <tbody class="table-client__body"></tbody>
+  </table>
+
+  <!-- Formulario Modal -->
+  <div id="productoModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2 id="modal-title" class="modal__title">Agregar Producto</h2>
+      <form id="productoForm" class="form-client">
+        <label for="codigo" class="form-client__label">Código:</label>
+        <input type="text" id="codigo" class="form-client__input" required>
+
+        <label for="codigoColor" class="form-client__label">Color (hex):</label>
+        <input type="color" id="codigoColor" class="form-client__input" required>
+
+        <label for="nombre" class="form-client__label">Nombre:</label>
+        <input type="text" id="nombre" class="form-client__input" required>
+
+        <label for="precio" class="form-client__label">Precio:</label>
+        <input type="number" id="precio" class="form-client__input" step="0.01" required>
+
+        <label for="stock" class="form-client__label">Stock:</label>
+        <input type="number" id="stock" class="form-client__input" required>
+
+        <label for="marca" class="form-client__label">Marca (ID):</label>
+        <input type="number" id="marca" class="form-client__input" required>
+
+        <label for="almacen" class="form-client__label">Almacén (ID):</label>
+        <input type="number" id="almacen" class="form-client__input" required>
+
+        <label for="tipo" class="form-client__label">Tipo (ID):</label>
+        <input type="number" id="tipo" class="form-client__input" required>
+
+        <button type="submit" id="guardarBtn" class="btn-save">Guardar</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="./APIConsumo.js"></script>
+</body>
+</html>
