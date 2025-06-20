@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Listado de Bancos</title>
+  <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./styleAPIConsumo.css">
+</head>
+<body>
+
+  <div class="title-container">
+    <h2>Listado de Bancos</h2>
+    <button id="addBancoBtn" class="btn-add">Agregar Banco</button>
+  </div>
+
+  <table id="loadBancoList" class="table-client">
+    <thead class="table-client__head">
+      <tr>
+        <th class="table-client__header">ID</th>
+        <th class="table-client__header">Código</th>
+        <th class="table-client__header">Descripción</th>
+        <th class="table-client__header">Dirección</th>
+        <th class="table-client__header">Teléfono</th>
+        <th class="table-client__header">Municipio</th>
+        <th class="table-client__header">Latitud</th>
+        <th class="table-client__header">Longitud</th>
+        <th class="table-client__header">Editar</th>
+        <th class="table-client__header">Eliminar</th>
+      </tr>
+    </thead>
+    <tbody class="table-client__body"></tbody>
+  </table>
+
+  <!-- Formulario Modal -->
+  <div id="bancoModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2 id="modal-title" class="modal__title">Agregar Banco</h2>
+      <form id="bancoForm" class="form-client">
+        <label for="codigo" class="form-client__label">Código:</label>
+        <input type="text" id="codigo" class="form-client__input" required>
+
+        <label for="descripcion" class="form-client__label">Descripción:</label>
+        <input type="text" id="descripcion" class="form-client__input" required>
+
+        <label for="direccion" class="form-client__label">Dirección:</label>
+        <input type="text" id="direccion" class="form-client__input" required>
+
+        <label for="telefono" class="form-client__label">Teléfono:</label>
+        <input type="text" id="telefono" class="form-client__input" required>
+
+        <label for="municipio" class="form-client__label">Municipio (ID):</label>
+        <input type="number" id="municipio" class="form-client__input" required>
+
+        <label for="latitud" class="form-client__label">Latitud:</label>
+        <input type="number" id="latitud" step="0.000001" class="form-client__input">
+
+        <label for="longitud" class="form-client__label">Longitud:</label>
+        <input type="number" id="longitud" step="0.000001" class="form-client__input">
+
+        <button type="submit" id="guardarBtn" class="btn-save">Guardar</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="./ApiConsumoMarca.html"></script>
+</body>
+</html>
