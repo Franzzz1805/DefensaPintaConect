@@ -1,0 +1,85 @@
+/* === MENÚ HAMBURGUESA === */
+@import url('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
+
+#toggle-menu { display: none; }
+
+.menu-toggle {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #1f2d3d;
+  color: white;
+  padding-top: 60px;
+  width: 250px;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.sidebar h2 {
+  text-align: center;
+  color: #00b894;
+  margin-bottom: 30px;
+  font-size: 20px;
+  transition: opacity 0.3s;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0 10px;
+}
+
+.sidebar li { margin: 15px 0; }
+
+.sidebar a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: white;
+  border-radius: 8px;
+  transition: background-color 0.3s, padding 0.3s;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.sidebar a:hover { background-color: #00b894; }
+
+.sidebar a i { font-size: 20px; }
+
+/* MAIN */
+main {
+  margin-left: 250px;
+  padding: 30px;
+  flex-grow: 1;
+  transition: margin-left 0.3s ease;
+}
+
+/* Sidebar colapsado */
+#toggle-menu:not(:checked) ~ .sidebar { width: 70px; }
+
+#toggle-menu:not(:checked) ~ .sidebar h2,
+#toggle-menu:not(:checked) ~ .sidebar a span {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+#toggle-menu:not(:checked) ~ main { margin-left: 70px; }
+
+/* Responsive opcional */
+@media (max-width: 768px) {
+  main { padding: 20px; }
+}
