@@ -1,214 +1,186 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pinta Conect - ¡Colores que Transforman!</title>
-    <link rel="stylesheet" href="StyleBienvenida.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mis Pinturas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      scroll-behavior: smooth; /* Scroll suave para links */
+      padding-top: 70px; /* para que no tape la navbar fija */
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1581090700227-1e37b190418e') center/cover no-repeat;
+      height: 80vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-shadow: 2px 2px 5px black;
+    }
+    .section-title {
+      text-align: center;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    .card i {
+      font-size: 2rem;
+      color: #0d6efd;
+    }
+    .contact-section {
+      background-color: #f8f9fa;
+      padding: 2rem;
+    }
+  </style>
 </head>
 <body>
 
-    <header class="header">
-        <div class="container header-content">
-            <h1>PINTA CONECT</h1>
-            <p class="lema">¡Colores que inspiran, calidad que perdura!</p>
+  <!-- NAVBAR FIJA -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Mis Pinturas</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#quienes">Quiénes Somos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#misionvision">Misión y Visión</a></li>
+          <li class="nav-item"><a class="nav-link" href="#porquenosotros">Por qué elegirnos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contáctanos</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-            <div class="search-container">
-                <input type="text" placeholder="¿Qué pintura buscas? Ej: lavable, exterior...">
-                <select name="product-type" id="product-type">
-                    <option value="">Tipo de Pintura</option>
-                    <option value="interior">Interior</option>
-                    <option value="exterior">Exterior</option>
-                    <option value="esmalte">Esmalte</option>
-                    <option value="primer">Primer/Sellador</option>
-                    <option value="textura">Textura</option>
-                    <option value="industrial">Industrial</option>
-                </select>
-                <button><i class="fas fa-search"></i> Buscar</button>
-            </div>
+  <!-- HERO -->
+  <header class="hero text-center">
+    <div>
+      <h1 class="display-4 fw-bold">Bienvenido a Mis Pinturas</h1>
+      <p class="lead">Colores que transforman espacios</p>
+    </div>
+  </header>
+
+  <!-- SECCIÓN: QUIÉNES SOMOS -->
+  <section id="quienes" class="container py-5">
+    <h2 class="section-title">¿Quiénes Somos?</h2>
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <img src="https://images.unsplash.com/photo-1581090700683-73352f3e7d45" class="img-fluid rounded" alt="Pinturas" />
+      </div>
+      <div class="col-md-6">
+        <p>
+          Somos una empresa dedicada a ofrecer pinturas de alta calidad para hogares, oficinas y proyectos
+          industriales. Nuestro compromiso es brindar productos duraderos, amigables con el ambiente y a precios
+          accesibles.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISIÓN Y VISIÓN -->
+  <section id="misionvision" class="container py-5">
+    <h2 class="section-title">Misión y Visión</h2>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card shadow-sm">
+          <div class="card-body text-center">
+            <i class="bx bx-bullseye"></i>
+            <h5 class="card-title mt-3">Misión</h5>
+            <p>
+              Proveer soluciones de pintura innovadoras, responsables y accesibles que superen las expectativas de
+              nuestros clientes.
+            </p>
+          </div>
         </div>
-    </header>
-
-    <main>
-        <section class="product-categories">
-            <div class="container">
-                <h2 class="section-title">Explora Nuestras Categorías</h2>
-                <div class="category-grid">
-                    <div class="category-item">
-                        <i class="fas fa-home icon"></i>
-                        <h3>Pinturas Interiores</h3>
-                    </div>
-                    <div class="category-item">
-                        <i class="fas fa-tree icon"></i>
-                        <h3>Pinturas Exteriores</h3>
-                    </div>
-                    <div class="category-item">
-                        <i class="fas fa-spray-can icon"></i>
-                        <h3>Esmaltes y Laca</h3>
-                    </div>
-                    <div class="category-item">
-                        <i class="fas fa-brush icon"></i>
-                        <h3>Primers y Selladores</h3>
-                    </div>
-                    <div class="category-item">
-                        <i class="fas fa-pallet icon"></i>
-                        <h3>Pintura Industrial</h3>
-                    </div>
-                    <div class="category-item">
-                        <i class="fas fa-palette icon"></i>
-                        <h3>Accesorios de Pintura</h3>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="promotions-section">
-            <div class="container">
-                <h2 class="section-title">¡Ofertas Exclusivas para Ti!</h2>
-                <div class="promotions-carousel">
-                    <div class="promotion-card">
-                        <img src="https://www.casamyers.com.mx/blog/wp-content/uploads/2018/08/pinturas-y-coloramico-1024x571.jpg" alt="Promoción Descuento">
-                        <div class="promotion-card-content">
-                            <h3>20% de Descuento en Pintura Lavable</h3>
-                            <p>¡Renueva tus espacios con nuestra pintura de fácil limpieza! Válido hasta el 30 de junio.</p>
-                            <a href="#" class="promo-button">Ver Oferta</a>
-                        </div>
-                    </div>
-                    <div class="promotion-card">
-                        <img src="https://www.pinturassuper.com/wp-content/uploads/2018/12/consejos-para-escoger-colores-de-pintura-para-casa.jpg" alt="Promoción Envío Gratis">
-                        <div class="promotion-card-content">
-                            <h3>Envío Gratis en Compras Mayores a $100</h3>
-                            <p>Te llevamos tus colores favoritos hasta la puerta de tu casa sin costo adicional.</p>
-                            <a href="#" class="promo-button">Más Detalles</a>
-                        </div>
-                    </div>
-                    <div class="promotion-card">
-                        <img src="https://www.albertdecopaint.com/wp-content/uploads/2024/12/pintar-una-casa-4.jpg" alt="Promoción Kit de Regalo">
-                        <div class="promotion-card-content">
-                            <h3>Kit de Herramientas de Pintura de Regalo</h3>
-                            <p>Por la compra de 2 galones de pintura premium, llévate un kit completo para tu proyecto.</p>
-                            <a href="#" class="promo-button">Descubrir</a>
-                        </div>
-                    </div>
-                    <div class="promotion-card">
-                        <img src="https://i5.walmartimages.com/asr/7953516f-2b98-4717-be62-4b0ccd452305.ab0aa81ae84b00f87ed664ec3199adaf.png?odnHeight=612&odnWidth=612&odnBg=FFFFFF" alt="Promoción 3x2">
-                        <div class="promotion-card-content">
-                            <h3>Lleva 3, Paga 2 en Línea Económica</h3>
-                            <p>Aprovecha nuestros precios más bajos para grandes proyectos.</p>
-                            <a href="#" class="promo-button">Comprar Ahora</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="bestsellers-section">
-            <div class="container">
-                <h2 class="section-title">Nuestros Colores Más Vendidos</h2>
-                <div class="product-grid">
-                    <div class="product-card">
-                        <img src="https://img.freepik.com/foto-gratis/surtido-articulos-pintura-pintura-rosa_23-2149579962.jpg" alt="Pintura Duradera Rosa">
-                        <div class="product-card-content">
-                            <h3>Pintura Duradera - Rosa Pastel</h3>
-                            <p>Alta cobertura y resistencia para interiores.</p>
-                            <div class="price">$25.99</div>
-                            <a href="#" class="add-to-cart"><i class="fas fa-shopping-cart"></i> Añadir</a>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://st4.depositphotos.com/13349494/26360/i/450/depositphotos_263608770-stock-photo-top-view-tin-green-paint.jpg" alt="Esmalte Brillante Verde">
-                        <div class="product-card-content">
-                            <h3>Esmalte Brillante - Verde Menta</h3>
-                            <p>Acabado liso y protector para madera y metal.</p>
-                            <div class="price">$30.50</div>
-                            <a href="#" class="add-to-cart"><i class="fas fa-shopping-cart"></i> Añadir</a>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://static9.depositphotos.com/1637168/1117/i/450/depositphotos_11173742-stock-photo-turquise-painted-brush-on-a.jpg" alt="Impermeabilizante Azul">
-                        <div class="product-card-content">
-                            <h3>Impermeabilizante Acrílico - Azul Cielo</h3>
-                            <p>Protección total contra la humedad para techos.</p>
-                            <div class="price">$45.00</div>
-                            <a href="#" class="add-to-cart"><i class="fas fa-shopping-cart"></i> Añadir</a>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://st4.depositphotos.com/13349494/26360/i/600/depositphotos_263608790-stock-photo-top-view-tin-yellow-paint.jpg" alt="Primer Universal Amarillo">
-                        <div class="product-card-content">
-                            <h3>Primer Universal - Amarillo Base</h3>
-                            <p>Prepara cualquier superficie para un acabado perfecto.</p>
-                            <div class="price">$20.00</div>
-                            <a href="#" class="add-to-cart"><i class="fas fa-shopping-cart"></i> Añadir</a>
-                        </div>
-                    </div>
-                    </div>
-            </div>
-        </section>
-
-        <section class="most-searched-section">
-            <div class="container">
-                <h2 class="section-title">Lo que Nuestros Clientes Más Buscan</h2>
-                <div class="product-grid">
-                    <div class="product-card">
-                        <img src="https://st.depositphotos.com/1616053/57536/i/600/depositphotos_575367366-stock-photo-set-open-metal-can-buckets.jpg" alt="Pintura Antimanchas">
-                        <div class="product-card-content">
-                            <h3>Pintura Anti-Manchas</h3>
-                            <p>Solución ideal para cocinas y áreas de alto tráfico.</p>
-                            <div class="price">$35.00</div>
-                            <a href="#" class="add-to-cart"><i class="fas fa-shopping-cart"></i> Añadir</a>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://st.depositphotos.com/3218141/4223/i/600/depositphotos_42232381-stock-photo-three-tin-of-paint-and.jpg" alt="Pintura Texturizada">
-                        <div class="product-card-content">
-                            <h3>Pintura Texturizada Arena</h3>
-                            <p>Añade un toque único y sofisticado a tus paredes.</p>
-                            <div class="price">$40.00</div>
-                            <a href="#" class="add-to-cart"><i class="fas fa-shopping-cart"></i> Añadir</a>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://st.depositphotos.com/1000393/2692/i/600/depositphotos_26927243-stock-photo-3d-can-paint.jpg" alt="Pintura Exterior Solar">
-                        <div class="product-card-content">
-                            <h3>Pintura Exterior con Protección Solar</h3>
-                            <p>Colores vibrantes que resisten la decoloración.</p>
-                            <div class="price">$38.75</div>
-                            <a href="#" class="add-to-cart"><i class="fas fa-shopping-cart"></i> Añadir</a>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="https://st.depositphotos.com/1800166/3028/i/600/depositphotos_30289009-stock-photo-painting-tools-on-white-background.jpg" alt="Kit de Rodillos">
-                        <div class="product-card-content">
-                            <h3>Kit de Rodillos y Brochas Profesional</h3>
-                            <p>Todo lo que necesitas para una aplicación impecable.</p>
-                            <div class="price">$18.99</div>
-                            <a href="#" class="add-to-cart"><i class="fas fa-shopping-cart"></i> Añadir</a>
-                        </div>
-                    </div>
-                    </div>
-            </div>
-        </section>
-
-        <section class="access-section">
-            <div class="container">
-                <h2>Únete a la Familia de Pinta Conect</h2>
-                <div class="access-buttons">
-                    <a href="login-register.html" class="access-button">Iniciar Sesión / Registrarse</a>
-                    <a href="supplier-customer-access.html" class="access-button">Acceder como Proveedor</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Pinta Conect. Todos los derechos reservados.</p>
-            <p>Innovando en Color y Calidad para un Futuro Brillante.</p>
+      </div>
+      <div class="col-md-6">
+        <div class="card shadow-sm">
+          <div class="card-body text-center">
+            <i class="bx bx-show"></i>
+            <h5 class="card-title mt-3">Visión</h5>
+            <p>
+              Ser la empresa líder en pinturas en Centroamérica, reconocida por su calidad, innovación y compromiso
+              ambiental.
+            </p>
+          </div>
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
 
-    </body>
+  <!-- POR QUÉ ELEGIRNOS -->
+  <section id="porquenosotros" class="container py-5">
+    <h2 class="section-title">¿Por qué elegirnos?</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card shadow-sm text-center p-3">
+          <i class="bx bx-paint-roll"></i>
+          <h5 class="mt-2">Calidad Superior</h5>
+          <p>Nuestras pinturas tienen mayor duración y cubrimiento.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm text-center p-3">
+          <i class="bx bx-leaf"></i>
+          <h5 class="mt-2">Eco-Amigables</h5>
+          <p>Productos bajos en VOC y respetuosos con el medio ambiente.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm text-center p-3">
+          <i class="bx bx-wallet"></i>
+          <h5 class="mt-2">Precios Justos</h5>
+          <p>Ofrecemos precios accesibles sin sacrificar la calidad.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="contact-section">
+    <div class="container">
+      <h2 class="section-title">Contáctanos</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <p><i class="bx bx-map"></i> Dirección: Managua, Nicaragua</p>
+          <p><i class="bx bx-phone"></i> Teléfono: +505 8888-8888</p>
+          <p><i class="bx bx-envelope"></i> Email: info@mispinturas.com</p>
+        </div>
+        <div class="col-md-6">
+          <form>
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="nombre" placeholder="Tu nombre" />
+            </div>
+            <div class="mb-3">
+              <label for="correo" class="form-label">Correo electrónico</label>
+              <input type="email" class="form-control" id="correo" placeholder="tu@email.com" />
+            </div>
+            <div class="mb-3">
+              <label for="mensaje" class="form-label">Mensaje</label>
+              <textarea
+                class="form-control"
+                id="mensaje"
+                rows="3"
+                placeholder="Escribe tu mensaje..."
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="text-center py-3 bg-dark text-light">
+    © 2025 Mis Pinturas - Todos los derechos reservados
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
