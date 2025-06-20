@@ -1,85 +1,263 @@
-/* === MENÚ HAMBURGUESA === */
-@import url('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-#toggle-menu { display: none; }
+/* Body */
+body {
+  background: #f9f9f9;
+  color: #222;
+  line-height: 1.6;
+}
 
+/* Menú hamburguesa - checkbox oculto */
+#toggle-menu {
+  display: none;
+}
+
+/* Botón hamburguesa */
 .menu-toggle {
   position: fixed;
   top: 15px;
   left: 15px;
-  font-size: 28px;
-  color: white;
+  font-size: 2rem;
+  color: #1e2a38; /* azul oscuro */
   cursor: pointer;
-  z-index: 3;
+  z-index: 9999;
 }
 
+/* Sidebar */
 .sidebar {
   position: fixed;
   top: 0;
-  left: 0;
+  left: -250px;
+  width: 230px;
   height: 100%;
-  background-color: #1f2d3d;
+  background-color: #1e2a38; /* azul oscuro */
   color: white;
-  padding-top: 60px;
-  width: 250px;
-  transition: width 0.3s ease;
-  overflow: hidden;
-  z-index: 2;
+  padding: 1rem;
+  transition: left 0.3s ease;
+  overflow-y: auto;
+  z-index: 9998;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.15);
 }
 
+/* Cuando el checkbox está checked mostramos el sidebar */
+#toggle-menu:checked + label + .sidebar {
+  left: 0;
+}
+
+/* Sidebar titulo */
 .sidebar h2 {
   text-align: center;
-  color: #00b894;
-  margin-bottom: 30px;
-  font-size: 20px;
-  transition: opacity 0.3s;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
 }
 
+/* Sidebar lista */
 .sidebar ul {
   list-style: none;
-  padding: 0 10px;
 }
 
-.sidebar li { margin: 15px 0; }
+.sidebar ul li {
+  margin-bottom: 1rem;
+}
 
-.sidebar a {
+.sidebar ul li a {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 10px 15px;
-  text-decoration: none;
   color: white;
-  border-radius: 8px;
-  transition: background-color 0.3s, padding 0.3s;
-  font-size: 16px;
-  white-space: nowrap;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 0.5rem;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
 }
 
-.sidebar a:hover { background-color: #00b894; }
+.sidebar ul li a i {
+  margin-right: 10px;
+  font-size: 1.3rem;
+}
 
-.sidebar a i { font-size: 20px; }
+/* Link activo */
+.sidebar ul li a.active,
+.sidebar ul li a:hover {
+  background-color: #3949ab; /* azul más claro para hover */
+}
 
-/* MAIN */
+/* Contenido principal */
 main {
-  margin-left: 250px;
-  padding: 30px;
-  flex-grow: 1;
+  margin-left: 0;
+  padding: 2rem 1rem 4rem 1rem;
   transition: margin-left 0.3s ease;
 }
 
-/* Sidebar colapsado */
-#toggle-menu:not(:checked) ~ .sidebar { width: 70px; }
-
-#toggle-menu:not(:checked) ~ .sidebar h2,
-#toggle-menu:not(:checked) ~ .sidebar a span {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+/* Cuando sidebar abierto, correr contenido */
+#toggle-menu:checked + label + .sidebar + main {
+  margin-left: 230px;
 }
 
-#toggle-menu:not(:checked) ~ main { margin-left: 70px; }
+/* Sección Hero */
+.hero {
+  background: linear-gradient(135deg, #1e2a38, #1e2a38);
+  color: white;
+  padding: 4rem 1rem;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
 
-/* Responsive opcional */
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Botón azul */
+.btn-success {
+  background-color: #1e2a38;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  color: white;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.btn-success:hover {
+  background-color: #1e2a38;
+}
+
+/* Container básico */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Títulos centrados */
+h2.text-center {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #1e2a38;
+}
+
+/* Filas y columnas estilo flexbox */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.col-md-6 {
+  flex: 0 0 48%;
+}
+
+.col-md-6 img.img-fluid {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Cards */
+.card {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 3px 8px rgb(0 0 0 / 0.1);
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-body.text-center {
+  text-align: center;
+}
+
+.card i {
+  color: #1e2a38;
+  margin-bottom: 0.75rem;
+}
+
+.card h5 {
+  margin-bottom: 0.5rem;
+  color: #1e2a38;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Tabla */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
+}
+
+.table__head tr {
+  background-color: #1e2a38;
+  color: white;
+}
+
+.table__cell,
+.table__cell--head {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.table__row:hover {
+  background-color: #e8eaf6;
+}
+
+/* Sección contacto */
+#contacto {
+  background-color: #e8eaf6;
+  border-radius: 8px;
+}
+
+/* Iconos contacto */
+#contacto p i {
+  color: #1e2a38;
+  margin-right: 8px;
+  font-size: 1.2rem;
+  vertical-align: middle;
+}
+
+/* Footer */
+footer {
+  background-color: #1e2a38;
+  color: white;
+  padding: 1rem 0;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  main { padding: 20px; }
+  .col-md-6 {
+    flex: 0 0 100%;
+  }
+  main {
+    padding: 1rem;
+  }
 }
